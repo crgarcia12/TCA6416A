@@ -6,6 +6,7 @@
 // NB!: Only address 0 or 1
 bool TCA6416A::begin(uint8_t addr_bit, TwoWire *theWire) {
 	i2caddr = 0x20 | addr_bit;
+	i2cwidth = 2; // TCA6416A is a 16-bit device (2 bytes)
 	TW = theWire;
 	TW->begin();
 
